@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Castellano Front Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Nick's Web Directory</h1>
+        <p>
+            Here you will find a list of all the web pages I have created. As well as my social media links.
+        </p>
+    </header>
+
+
+    <main >
+        <section id="contact-social-media">
+            <h2>
+                Social Media Links
+            </h2>
+            <ul>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn">
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/github.svg') }}" alt="LinkedIn">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/globe.svg') }}" alt="LinkedIn">
+                        My Personal Website
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="web-pages">
+            <h2>
+                Live Web Projects
+            </h2>
+            <ul>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 1">
+                        Web Page 1
+                    </a>
+                </li>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 2">
+                        Web Page 2
+                    </a>
+                </li>
+                <li>
+                    <a class="media-link" href="#">
+                        <!-- display the icon from static -->
+                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 3">
+                        Web Page 3
+                    </a>
+                </li>
+            </ul>
+    </main>
+
+    <footer>
+        Made by Nicolas Castellano
+    </footer>
+</body>
+</html>
