@@ -16,8 +16,8 @@ RUN pip install Flask pymongo python-dotenv
 # Add any needed packages specified in requirements.txt
 RUN pip freeze > requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+# # Make port 5000 available to the world outside this container
+# EXPOSE 5000
 
 # # Define environment variable
 # ENV MONGO_URI="mongodb://mongodb_host:27017/your_database"
