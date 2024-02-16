@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invalid - Nicolas Castellano Front Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <header>
@@ -15,8 +22,11 @@
     </header>
 
 
-    <main >
-        
+    <main id="http-error-main">
+        <h2>Invalid Method</h2>
+        <p>
+            The method you are trying to use is invalid. Please try again.
+        </p>
     </main>
 
     <footer>
@@ -25,20 +35,3 @@
 </body>
 </html>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invalid - Nick's Front Page</title>
-</head>
-<body>
-    <header>
-        <h1>Invalid Method</h1>
-        <p>
-            The method you are trying to use is invalid. Please try again.
-        </p>
-    </header>
-</body>
-</html>

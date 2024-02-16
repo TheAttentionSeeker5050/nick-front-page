@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Castellano Front Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <header>
@@ -20,58 +27,58 @@
             <h2>
                 Social Media Links
             </h2>
-            <ul>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn">
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/github.svg') }}" alt="LinkedIn">
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/globe.svg') }}" alt="LinkedIn">
-                        My Personal Website
-                    </a>
-                </li>
-            </ul>
+            <!-- if social_links is empty -->
+            {% if not social_links %}
+                <p>
+                    No social media links available.
+                </p>
+            <!-- if social_links is not empty -->
+            {% else %}
+                <ul>
+                    <!-- iterate the social links -->
+                    {% for link in social_links %}
+                        <li>
+                            <a class="media-link" href="{{ link.link_url }}" target="_blank">
+                                <!-- display the icon from static -->
+                                <img class="link-icon" src="{{ url_for('static', filename='icons/' + link.link_icon_name ) }}" alt="{{ link.link_label }}">
+                                <!-- add the link label from the social_links -->
+                                {{ link.link_label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    
+                </ul>
+            {% endif %}
+            
+            
         </section>
 
         <section id="web-pages">
             <h2>
                 Live Web Projects
             </h2>
-            <ul>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 1">
-                        Web Page 1
-                    </a>
-                </li>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 2">
-                        Web Page 2
-                    </a>
-                </li>
-                <li>
-                    <a class="media-link" href="#">
-                        <!-- display the icon from static -->
-                        <img class="link-icon" src="{{ url_for('static', filename='icons/project.svg') }}" alt="Web page 3">
-                        Web Page 3
-                    </a>
-                </li>
-            </ul>
+            <!-- if social_links is empty -->
+            {% if not project_links %}
+                <p>
+                    No live projects links available.
+                </p>
+            <!-- if social_links is not empty -->
+            {% else %}
+                <ul>
+                    <!-- iterate the live project links -->
+                    {% for link in project_links %}
+                        <li>
+                            <a class="media-link" href="{{ link.link_url }}" target="_blank">
+                                <!-- display the icon from static -->
+                                <img class="link-icon" src="{{ url_for('static', filename='icons/' + link.link_icon_name ) }}" alt="{{ link.link_label }}">
+                                <!-- add the link label from the social_links -->
+                                {{ link.link_label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    
+                </ul>
+            {% endif %}
         </section>
     </main>
 

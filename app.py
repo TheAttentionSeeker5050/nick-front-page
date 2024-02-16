@@ -14,14 +14,20 @@ app = Flask(__name__)
 # register the routes
 app.register_blueprint(main_bp)
 
+# app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
+
 # Load environment variables from .env file
 load_dotenv(find_dotenv())
 
-print(os.environ.get('MONGO_ADDRESS'))
+# print(os.environ.get('MONGO_ADDRESS'))
 
 # Connect to MongoDB using environment variables
 client = MongoClient(os.environ.get('MONGO_ADDRESS'))
-db = client.frontPageDB
+# create a database if it does not exist
+if 'frontPageDB' not in client.list_database_names():
+    db = client.frontPageDB
+
+
 
 # Define your routes and other Flask application logic here
 

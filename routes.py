@@ -16,7 +16,10 @@ def index():
     # if get 
     if request.method == 'GET':
 
+        # get all the links
         links = get_all_links()
+
+        # filter the links by category
         social_links = [link for link in links if link['category'] == 'social']
         project_links = [link for link in links if link['category'] == 'project']
 
@@ -26,6 +29,6 @@ def index():
         return render_template('invalid_method.html')
 
 
-# @main_bp.route('/invalid_method')
-# def invalid_method():
-#     return render_template('invalid_method.html')
+@main_bp.route('/invalid_method')
+def invalid_method():
+    return render_template('invalid_method.html')
