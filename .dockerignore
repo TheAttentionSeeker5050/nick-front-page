@@ -1,2 +1,4 @@
 mongo-data/diagnostic.data/
 mongo-data/journal/
+env/
+venv/

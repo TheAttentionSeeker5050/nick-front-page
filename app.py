@@ -8,6 +8,9 @@ from routes import main_bp
 from dotenv import load_dotenv, find_dotenv
 import os
 
+# Load environment variables from .env file
+load_dotenv(find_dotenv())
+
 # initialize the Flask app
 app = Flask(__name__)
 
@@ -16,8 +19,6 @@ app.register_blueprint(main_bp)
 
 # app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
 
-# Load environment variables from .env file
-load_dotenv(find_dotenv())
 
 # print(os.environ.get('MONGO_ADDRESS'))
 
@@ -26,7 +27,6 @@ client = MongoClient(os.environ.get('MONGO_ADDRESS'))
 # create a database if it does not exist
 if 'frontPageDB' not in client.list_database_names():
     db = client.frontPageDB
-
 
 
 # Define your routes and other Flask application logic here

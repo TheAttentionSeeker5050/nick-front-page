@@ -1,4 +1,4 @@
-mongo 
+// mongo 
 
 // use frontPageDB;
 db = db.getSiblingDB('frontPageDB');
@@ -56,5 +56,11 @@ db.links.insertMany([
     "link_url": "https://ecommerce-x.alligatorcode.pro/",
     "link_icon_name": "project.svg",
     "category": "project"
-  },    
+  },  
+  {
+    "link_label": "Django, JQuery and Tailwind CSS Job Posting Website",
+    "link_url": "https://panda-jobs.nicolas-castellano.com/",
+    "link_icon_name": "project.svg",
+    "category": "project"
+  }
 ])

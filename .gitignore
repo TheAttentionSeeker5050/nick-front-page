@@ -1,2 +1,5 @@
 __pycache__
 mongo-data
+deploy.env
+env/
+venv/

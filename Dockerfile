@@ -13,6 +13,9 @@ COPY . /app
 # install Flask and pymongo
 RUN pip install Flask pymongo python-dotenv
 
+# setup gunicon
+RUN pip install gunicorn
+
 # Add any needed packages specified in requirements.txt
 RUN pip freeze > requirements.txt
 
