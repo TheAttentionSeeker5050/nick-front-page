@@ -74,6 +74,16 @@ main {
             }
         }
     }
+
+    #web-pages {
+        ul {
+            display: grid;
+            /* if the screen is tablet size or bigger, I want two columns */
+            grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+            gap: 1.0rem;
+            
+        }
+    }
 }
 
 #http-error-main {
@@ -98,4 +108,22 @@ main {
 footer {
     text-align: center;
     padding: 1.7rem 0;
+}
+
+/* media queries */
+/* if size is lower than 700px */
+@media (max-width: 700px) {
+    main {
+        padding: 0 1rem;
+    }
+    #web-pages {
+        /* have only one ul column */
+        ul {
+            grid-template-columns: 1fr;
+            li {
+                font-size: 1.5rem;
+                max-width: 80vw;
+            }
+        }
+    }
 }
