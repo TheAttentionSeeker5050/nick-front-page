@@ -9,7 +9,7 @@ from dotenv import load_dotenv, find_dotenv
 import os
 
 # Load environment variables from .env file
-load_dotenv(find_dotenv())
+load_dotenv()
 
 # initialize the Flask app
 app = Flask(__name__)
