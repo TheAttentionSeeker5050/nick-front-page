@@ -24,9 +24,13 @@ app.register_blueprint(main_bp)
 
 # Connect to MongoDB using environment variables
 client = MongoClient(os.environ.get('MONGO_ADDRESS'))
-# create a database if it does not exist
-if 'frontPageDB' not in client.list_database_names():
-    db = client.frontPageDB
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
 
 
 # Define your routes and other Flask application logic here
