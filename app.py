@@ -1,5 +1,5 @@
 from flask import Flask
-from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
 
 # import the routes
 from routes import main_bp
@@ -26,17 +26,16 @@ app.register_blueprint(main_bp)
 app.logger.info('MONGO_ADDRESS: ' + os.environ.get('MONGO_ADDRESS'))
 
 # Connect to MongoDB using environment variables
-client = MongoClient(os.environ.get('MONGO_ADDRESS'))
+mongoClient = MongoClient(os.environ.get('MONGO_ADDRESS'))
 
 # Send a ping to confirm a successful connection
 try:
-    client.admin.command('ping')
+    mongoClient.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
 
 
-# Define your routes and other Flask application logic here
-
+# run the app
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
