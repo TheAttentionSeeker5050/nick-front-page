@@ -22,6 +22,9 @@ app.register_blueprint(main_bp)
 
 # print(os.environ.get('MONGO_ADDRESS'))
 
+# log the environment variable MONGO_ADDRESS
+app.logger.info('MONGO_ADDRESS: ' + os.environ.get('MONGO_ADDRESS'))
+
 # Connect to MongoDB using environment variables
 client = MongoClient(os.environ.get('MONGO_ADDRESS'))
 
